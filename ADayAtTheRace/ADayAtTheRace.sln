@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADayAtTheRace", "ADayAtTheRace.csproj", "{5C6F298B-AF78-4AAB-8AC2-79BEB169AFCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueButtonLib", "..\ValueButtonLib\ValueButtonLib.csproj", "{044E58F5-4C75-475B-BCEB-09488BCB8777}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C6F298B-AF78-4AAB-8AC2-79BEB169AFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C6F298B-AF78-4AAB-8AC2-79BEB169AFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C6F298B-AF78-4AAB-8AC2-79BEB169AFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C6F298B-AF78-4AAB-8AC2-79BEB169AFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{044E58F5-4C75-475B-BCEB-09488BCB8777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044E58F5-4C75-475B-BCEB-09488BCB8777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{044E58F5-4C75-475B-BCEB-09488BCB8777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044E58F5-4C75-475B-BCEB-09488BCB8777}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBF35604-224B-43EC-8EAF-7FCE9517B2D9}
+	EndGlobalSection
+EndGlobal

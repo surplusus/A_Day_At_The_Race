@@ -1,0 +1,12 @@
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\bin\Debug\ADayAtTheRace.exe.config
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\bin\Debug\ADayAtTheRace.exe
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\bin\Debug\ADayAtTheRace.pdb
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\obj\Debug\ADayAtTheRace.csprojAssemblyReference.cache
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\obj\Debug\ADayAtTheRace.Form1.resources
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\obj\Debug\ADayAtTheRace.Properties.Resources.resources
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\obj\Debug\ADayAtTheRace.csproj.GenerateResource.cache
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\obj\Debug\ADayAtTheRace.exe
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\obj\Debug\ADayAtTheRace.pdb
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\bin\Debug\ValueButtonLib.dll
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\bin\Debug\ValueButtonLib.pdb
+E:\GameDev\CCppCsharp\A_Day_At_The_Race\ADayAtTheRace\obj\Debug\ADayAtTheRace.csproj.CopyComplete

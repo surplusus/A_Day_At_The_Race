@@ -10,7 +10,6 @@ namespace ADayAtTheRace
     class Guy
     {
         public string Name { get; }
-
         private const string NoWayText = "Not Enough Money";
         public Bet MyBet = null;
         public int Cash { get; set; }

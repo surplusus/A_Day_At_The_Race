@@ -10,6 +10,7 @@ namespace ADayAtTheRace
         public Image image;
         private Timer frameTimer;
         public int idxStart;
+        private bool isRunning = false;
         public AnimSprite(Bitmap image, int width, int startIdx)
         {
             idxStart = startIdx;
@@ -17,6 +18,7 @@ namespace ADayAtTheRace
             this.width = width;
             this.image = image;
             this.height = image?.Height ?? 0;   // image가 널이면 0
+
         }
         public void Start(int interval)
         {
@@ -29,10 +31,12 @@ namespace ADayAtTheRace
         }
         public void Start()
         {
-            Start(50);
+            if (isRunning == false)
+                Start(50);
         }
         public void Stop()
         {
+            isRunning = false;
             frameTimer.Stop();
             frameTimer.Dispose();
         }
@@ -63,6 +67,5 @@ namespace ADayAtTheRace
             if (frame >= 4)
                 frame = 0;
         }
-
     }
 }

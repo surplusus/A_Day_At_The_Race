@@ -87,7 +87,7 @@
             this.AI_TextBox.Location = new System.Drawing.Point(15, 80);
             this.AI_TextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AI_TextBox.Name = "AI_TextBox";
-            this.AI_TextBox.Size = new System.Drawing.Size(202, 21);
+            this.AI_TextBox.Size = new System.Drawing.Size(202, 25);
             this.AI_TextBox.TabIndex = 2;
             this.AI_TextBox.Text = "AI 돈 걸 준비하시고~";
             // 
@@ -97,7 +97,7 @@
             this.Bob_TextBox.Location = new System.Drawing.Point(15, 51);
             this.Bob_TextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Bob_TextBox.Name = "Bob_TextBox";
-            this.Bob_TextBox.Size = new System.Drawing.Size(202, 21);
+            this.Bob_TextBox.Size = new System.Drawing.Size(202, 25);
             this.Bob_TextBox.TabIndex = 1;
             this.Bob_TextBox.Text = "Bob 돈 걸 준비하시고~";
             // 
@@ -107,7 +107,7 @@
             this.Joe_TextBox.Location = new System.Drawing.Point(15, 22);
             this.Joe_TextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Joe_TextBox.Name = "Joe_TextBox";
-            this.Joe_TextBox.Size = new System.Drawing.Size(202, 21);
+            this.Joe_TextBox.Size = new System.Drawing.Size(202, 25);
             this.Joe_TextBox.TabIndex = 0;
             this.Joe_TextBox.Text = "Joe 돈 걸 준비하시고~";
             // 
@@ -118,7 +118,7 @@
             this.AI_RadioButton.Location = new System.Drawing.Point(14, 81);
             this.AI_RadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AI_RadioButton.Name = "AI_RadioButton";
-            this.AI_RadioButton.Size = new System.Drawing.Size(34, 16);
+            this.AI_RadioButton.Size = new System.Drawing.Size(39, 19);
             this.AI_RadioButton.TabIndex = 10;
             this.AI_RadioButton.Text = "AI";
             this.AI_RadioButton.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.Joe_RadioButton.Location = new System.Drawing.Point(14, 21);
             this.Joe_RadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Joe_RadioButton.Name = "Joe_RadioButton";
-            this.Joe_RadioButton.Size = new System.Drawing.Size(43, 16);
+            this.Joe_RadioButton.Size = new System.Drawing.Size(51, 19);
             this.Joe_RadioButton.TabIndex = 8;
             this.Joe_RadioButton.TabStop = true;
             this.Joe_RadioButton.Text = "Joe";
@@ -146,7 +146,7 @@
             this.Bob_RadioButton.Location = new System.Drawing.Point(14, 52);
             this.Bob_RadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Bob_RadioButton.Name = "Bob_RadioButton";
-            this.Bob_RadioButton.Size = new System.Drawing.Size(45, 16);
+            this.Bob_RadioButton.Size = new System.Drawing.Size(55, 19);
             this.Bob_RadioButton.TabIndex = 9;
             this.Bob_RadioButton.Text = "Bob";
             this.Bob_RadioButton.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             this.Dog_Number_ComboBox.Location = new System.Drawing.Point(355, 140);
             this.Dog_Number_ComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dog_Number_ComboBox.Name = "Dog_Number_ComboBox";
-            this.Dog_Number_ComboBox.Size = new System.Drawing.Size(42, 20);
+            this.Dog_Number_ComboBox.Size = new System.Drawing.Size(42, 23);
             this.Dog_Number_ComboBox.TabIndex = 6;
             // 
             // label2
@@ -167,7 +167,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(218, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 12);
+            this.label2.Size = new System.Drawing.Size(155, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Bucks on Dog Number";
             // 
@@ -178,7 +178,7 @@
             this.Bucks_ComboBox.Location = new System.Drawing.Point(107, 140);
             this.Bucks_ComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Bucks_ComboBox.Name = "Bucks_ComboBox";
-            this.Bucks_ComboBox.Size = new System.Drawing.Size(106, 20);
+            this.Bucks_ComboBox.Size = new System.Drawing.Size(106, 23);
             this.Bucks_ComboBox.TabIndex = 4;
             // 
             // GuyName
@@ -186,7 +186,7 @@
             this.GuyName.AutoSize = true;
             this.GuyName.Location = new System.Drawing.Point(4, 143);
             this.GuyName.Name = "GuyName";
-            this.GuyName.Size = new System.Drawing.Size(25, 12);
+            this.GuyName.Size = new System.Drawing.Size(30, 15);
             this.GuyName.TabIndex = 3;
             this.GuyName.Text = "Joe";
             // 
@@ -248,6 +248,7 @@
             // 
             // Dog3_Pic
             // 
+            this.Dog3_Pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Dog3_Pic.Location = new System.Drawing.Point(64, 159);
             this.Dog3_Pic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dog3_Pic.Name = "Dog3_Pic";
@@ -257,6 +258,7 @@
             // 
             // Dog2_Pic
             // 
+            this.Dog2_Pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Dog2_Pic.Location = new System.Drawing.Point(64, 111);
             this.Dog2_Pic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dog2_Pic.Name = "Dog2_Pic";
@@ -266,6 +268,7 @@
             // 
             // Dog1_Pic
             // 
+            this.Dog1_Pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Dog1_Pic.Location = new System.Drawing.Point(64, 63);
             this.Dog1_Pic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dog1_Pic.Name = "Dog1_Pic";

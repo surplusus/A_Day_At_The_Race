@@ -64,6 +64,10 @@ namespace ADayAtTheRace
                 if (!horse.Run())
                 {
                     Timer.Stop();
+                    foreach (Horse horse2 in horses)
+                    {
+                        horse2.Toggle_PlaySprite();
+                    }
                     if (MessageBox.Show($"승자는! ${horse.StartingPosition + 1}번 말!") == DialogResult.OK)
                     {
                         foreach (Horse horse1 in horses)
@@ -126,7 +130,13 @@ namespace ADayAtTheRace
                     allBet = false;
             }
             if (allBet)
+            {
                 Timer.Start();
+                foreach (Horse horse in horses)
+                {
+                    horse.Toggle_PlaySprite();
+                }
+            }
             else
                 MessageBox.Show("자~ 자! 다들 돈 거시고~!");
         }

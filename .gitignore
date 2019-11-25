@@ -1,0 +1,7 @@
+*.suo
+*.ide-shm
+*.ide-wal
+*.exe
+*.pdb
+*.txt
+*.cache

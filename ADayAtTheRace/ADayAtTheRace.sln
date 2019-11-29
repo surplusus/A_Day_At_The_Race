@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADayAtTheRace", "ADayAtTheRace.csproj", "{5C6F298B-AF78-4AAB-8AC2-79BEB169AFCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex_ADayAtTheRace", "Ex_ADayAtTheRace.csproj", "{5C6F298B-AF78-4AAB-8AC2-79BEB169AFCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueButtonLib", "..\ValueButtonLib\ValueButtonLib.csproj", "{044E58F5-4C75-475B-BCEB-09488BCB8777}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeGame", "..\TypeGame\TypeGame.csproj", "{642712A7-983A-4540-A0AD-AD043C073077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex_MakeHouse", "..\Ex_MakeHouse\Ex_MakeHouse.csproj", "{DE8442FB-15FB-436B-9A93-64CB0F34D043}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{642712A7-983A-4540-A0AD-AD043C073077}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{642712A7-983A-4540-A0AD-AD043C073077}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{642712A7-983A-4540-A0AD-AD043C073077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8442FB-15FB-436B-9A93-64CB0F34D043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8442FB-15FB-436B-9A93-64CB0F34D043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8442FB-15FB-436B-9A93-64CB0F34D043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8442FB-15FB-436B-9A93-64CB0F34D043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

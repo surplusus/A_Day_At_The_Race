@@ -5,3 +5,10 @@ E:\GameDev\CCppCsharp\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.
 E:\GameDev\CCppCsharp\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.csproj.GenerateResource.cache
 E:\GameDev\CCppCsharp\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.dll
 E:\GameDev\CCppCsharp\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.pdb
+C:\Users\School\Documents\A_Day_At_The_Race\ValueButtonLib\bin\Debug\ValueButtonLib.dll
+C:\Users\School\Documents\A_Day_At_The_Race\ValueButtonLib\bin\Debug\ValueButtonLib.pdb
+C:\Users\School\Documents\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.csprojAssemblyReference.cache
+C:\Users\School\Documents\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.ValueButton.resources
+C:\Users\School\Documents\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.csproj.GenerateResource.cache
+C:\Users\School\Documents\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.dll
+C:\Users\School\Documents\A_Day_At_The_Race\ValueButtonLib\obj\Debug\ValueButtonLib.pdb

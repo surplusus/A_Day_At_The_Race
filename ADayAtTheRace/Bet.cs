@@ -10,6 +10,7 @@ namespace ADayAtTheRace
     {
         public int Amount { get; set; }
         public int Dog { get; set; }
+        public int ExtraBet { get; set; }
         private readonly Guy Bettor = null;
         public Bet(Guy Bettor)
         {
@@ -34,12 +35,13 @@ namespace ADayAtTheRace
             // if the dog won, return the amout bet.
             if (this.Dog == Winner)
             {
-                return Amount;
+
+                return Amount * ExtraBet;
             }
             // otherwise, return the negative of bet.
             else
             {
-                return -Amount;
+                return -Amount * ExtraBet;
             }
         }
 

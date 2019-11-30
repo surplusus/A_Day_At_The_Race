@@ -9,6 +9,8 @@ namespace ADayAtTheRace
     {
         private Guy[] guys = new Guy[3];
         private Horse[] horses = new Horse[4];
+        private bool extra = false;
+        private int previdx = 0;
         public Form1()
         {
             InitializeComponent();
@@ -68,7 +70,8 @@ namespace ADayAtTheRace
                     {
                         horse2.Toggle_PlaySprite();
                     }
-                    if (MessageBox.Show($"승자는! ${horse.StartingPosition + 1}번 말!") == DialogResult.OK)
+                    int winnerHorse = horse.StartingPosition;
+                    if (MessageBox.Show($"승자는! ${winnerHorse + 1}번 말!") == DialogResult.OK)
                     {
                         foreach (Horse horse1 in horses)
                         {
@@ -77,14 +80,23 @@ namespace ADayAtTheRace
                         foreach (Guy guy in guys)
                         {
                             // won the bets by winner(horse number)
-                            guy.Collect(horse.StartingPosition);
+                            guy.Collect(winnerHorse);
                             guy.ClearBet();
                             Joe_RadioButton.Checked = true;
                             GuyName.Text = "Joe";
                             if (guy.Cash <= 0)
                                 if (MessageBox.Show($"<{guy.Name}>이 털려브렀으~") == DialogResult.OK)
                                     Application.Exit();
-                                    
+
+                            if (guy.Name == "AI")
+                                if (MessageBox.Show($"이번 경기에 {winnerHorse + 1}번 말이 이겼습니다. AI에 다시 {winnerHorse + 1}번 말에 걸어도 되겠습니까? 다시 AI가 이기면 배팅액의 2배를 받지만 지면 2배를 잃습니다", "제안!"
+                                    , MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
+                                    extra = true;
+                                    Bucks_ComboBox.SelectedIndex = previdx;
+                                    guy.PlaceBet(Bucks_ComboBox.SelectedIndex, winnerHorse);
+                                    AI_RadioButton.Enabled = false;
+                                }
                         }
                         return;
                     }
@@ -112,6 +124,7 @@ namespace ADayAtTheRace
                     break;
                 case "AI":
                     guys[2].UpdateLabels();
+                    previdx = Bucks_ComboBox.SelectedIndex;
                     if (!guys[2].PlaceBet(Bucks_ComboBox.SelectedIndex, Dog_Number_ComboBox.SelectedIndex))
                     {
                         MessageBox.Show("콤퓨타! 돈 없으면 집에 가슈~");
@@ -136,6 +149,7 @@ namespace ADayAtTheRace
                 {
                     horse.Toggle_PlaySprite();
                 }
+                AI_RadioButton.Enabled = true;
             }
             else
                 MessageBox.Show("자~ 자! 다들 돈 거시고~!");

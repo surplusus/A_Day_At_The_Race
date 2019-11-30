@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeGame", "..\TypeGame\Typ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex_MakeHouse", "..\Ex_MakeHouse\Ex_MakeHouse.csproj", "{DE8442FB-15FB-436B-9A93-64CB0F34D043}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The_Quest", "..\The_Quest\The_Quest.csproj", "{86283ADC-4397-4471-B97B-FB05E2D8FCA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DE8442FB-15FB-436B-9A93-64CB0F34D043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8442FB-15FB-436B-9A93-64CB0F34D043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8442FB-15FB-436B-9A93-64CB0F34D043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86283ADC-4397-4471-B97B-FB05E2D8FCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86283ADC-4397-4471-B97B-FB05E2D8FCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86283ADC-4397-4471-B97B-FB05E2D8FCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86283ADC-4397-4471-B97B-FB05E2D8FCA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

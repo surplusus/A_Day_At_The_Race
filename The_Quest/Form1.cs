@@ -32,6 +32,34 @@ namespace The_Quest
         {
             PlayerSprite.Location = game.PlayerLocation;
             PlayerHitPoints.Text = game.PlayerHitPoints.ToString();
+
+            bool showBat = false;
+            bool showGhost = false;
+            bool showGhoul = false;
+            int enemiesShown = 0;
+            List<bool> enemyList = new List<bool>() { false, false, false };
+            
+
+            foreach (Enemy enemy in game.Enemies)
+            {
+                UpdateEnemy(enemy);
+            }
+        }
+
+        private void UpdateEnemy(Enemy enemy)
+        {
+            if (enemy is Bat)
+            {
+
+            }
+            else if (enemy is Ghost)
+            {
+
+            }
+            else if (enemy is Ghoul)
+            {
+
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

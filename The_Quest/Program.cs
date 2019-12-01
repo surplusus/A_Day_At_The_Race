@@ -16,7 +16,12 @@ namespace The_Quest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 myForm = new Form1();
+            myForm.KeyDown += new KeyEventHandler((sender, e) => {
+                if (e.KeyCode == Keys.Escape)
+                    Application.Exit();
+            });
+            Application.Run(myForm);
         }
     }
 }

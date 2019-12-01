@@ -6,17 +6,29 @@ using System.Windows.Forms;
 
 namespace The_Quest
 {
+    [Flags]
+    enum TypeEnemy
+    {
+        NONE = 0, BAT = 1, GHOST = 2, GHOUL = 4
+    }
+    [Flags]
+    enum TypeWeapon
+    {
+        NONE = 0, REDPOTION = 1, BLUEPOTION = 2, SWORD = 4, BOW = 8, MACE = 16
+    }
     public enum Direction
     {
         UP, RIGHT, DOWN, LEFT, END
     }
     public class Game
     {
+        public readonly string[] nameOfInvenItem;
         private Player player;
         public Point PlayerLocation { get { return player.Location; } }
         public List<Enemy> Enemies { get; private set; } = new List<Enemy>();
         public List<Weapon> WeaponsInRoom { get; private set; } = new List<Weapon>();
         public IEnumerable<string> PlayerWeapos { get { return player.Weapons; } }
+        public Weapon PlayerEquippedWeapon { get { return player.EquippedWeapon; } }
         public int Level { get; private set; } = 0;
         public Rectangle Boundaries { get; private set; }
         public int PlayerHitPoints { get { return player.HitPoints; } }
@@ -24,6 +36,7 @@ namespace The_Quest
         public Game(Rectangle boundaries)
         {
             this.Boundaries = boundaries;
+            nameOfInvenItem = new string[5] { "Red Potion", "Blue Potion", "Sword", "Bow", "Mace" };
             player = new Player(this
                 , new Point(boundaries.Left + 10, boundaries.Top + 70));
         }
@@ -70,7 +83,8 @@ namespace The_Quest
         public void NewLevel(Random random)
         {
             Level++;
-            MessageBox.Show($"레벨업!! : {Level} 랩");
+            if (Level != 1)
+                MessageBox.Show($"레벨업!! : {Level} 랩");
             Enemies.Clear();
             WeaponsInRoom.Clear();
 

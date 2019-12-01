@@ -90,7 +90,9 @@
             // AttackUp
             // 
             this.AttackUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AttackUp.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackUp.ForeColor = System.Drawing.Color.Gray;
             this.AttackUp.Location = new System.Drawing.Point(41, 50);
             this.AttackUp.Name = "AttackUp";
             this.AttackUp.Size = new System.Drawing.Size(83, 22);
@@ -102,7 +104,9 @@
             // AttackLeft
             // 
             this.AttackLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackLeft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AttackLeft.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackLeft.ForeColor = System.Drawing.Color.Gray;
             this.AttackLeft.Location = new System.Drawing.Point(4, 87);
             this.AttackLeft.Name = "AttackLeft";
             this.AttackLeft.Size = new System.Drawing.Size(71, 22);
@@ -114,7 +118,9 @@
             // AttackDown
             // 
             this.AttackDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AttackDown.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackDown.ForeColor = System.Drawing.Color.Gray;
             this.AttackDown.Location = new System.Drawing.Point(41, 123);
             this.AttackDown.Name = "AttackDown";
             this.AttackDown.Size = new System.Drawing.Size(83, 22);
@@ -126,7 +132,9 @@
             // AttackRight
             // 
             this.AttackRight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackRight.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AttackRight.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackRight.ForeColor = System.Drawing.Color.Gray;
             this.AttackRight.Location = new System.Drawing.Point(84, 87);
             this.AttackRight.Name = "AttackRight";
             this.AttackRight.Size = new System.Drawing.Size(71, 22);
@@ -138,7 +146,9 @@
             // MoveUp
             // 
             this.MoveUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MoveUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MoveUp.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveUp.ForeColor = System.Drawing.Color.Gray;
             this.MoveUp.Location = new System.Drawing.Point(41, 49);
             this.MoveUp.Name = "MoveUp";
             this.MoveUp.Size = new System.Drawing.Size(83, 22);
@@ -263,7 +273,9 @@
             // MoveLeft
             // 
             this.MoveLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MoveLeft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MoveLeft.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveLeft.ForeColor = System.Drawing.Color.Gray;
             this.MoveLeft.Location = new System.Drawing.Point(4, 86);
             this.MoveLeft.Name = "MoveLeft";
             this.MoveLeft.Size = new System.Drawing.Size(71, 22);
@@ -275,7 +287,9 @@
             // MoveDown
             // 
             this.MoveDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MoveDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MoveDown.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveDown.ForeColor = System.Drawing.Color.Gray;
             this.MoveDown.Location = new System.Drawing.Point(41, 122);
             this.MoveDown.Name = "MoveDown";
             this.MoveDown.Size = new System.Drawing.Size(83, 22);
@@ -287,7 +301,9 @@
             // MoveRight
             // 
             this.MoveRight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MoveRight.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MoveRight.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveRight.ForeColor = System.Drawing.Color.Gray;
             this.MoveRight.Location = new System.Drawing.Point(84, 86);
             this.MoveRight.Name = "MoveRight";
             this.MoveRight.Size = new System.Drawing.Size(71, 22);
@@ -555,6 +571,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.HitPointPanel.ResumeLayout(false);
             this.HitPointPanel.PerformLayout();
             this.Move_panel.ResumeLayout(false);

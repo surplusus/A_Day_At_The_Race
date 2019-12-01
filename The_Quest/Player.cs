@@ -9,7 +9,7 @@ namespace The_Quest
 {
     class Player : Mover
     {
-        private Weapon equippedWeapon;
+        public Weapon EquippedWeapon { get; private set; }
         private List<Weapon> inventory = new List<Weapon>();
         public int HitPoints { get; private set; }
         public IEnumerable<string> Weapons
@@ -41,7 +41,7 @@ namespace The_Quest
         {
             foreach (Weapon weapon in inventory)
                 if (weapon.Name == weaponName)
-                    equippedWeapon = weapon;
+                    EquippedWeapon = weapon;
         }
         public void Move(Direction direction)
         {
@@ -60,12 +60,12 @@ namespace The_Quest
         }
         public void Attack(Direction direction, Random random)
         {
-            if (equippedWeapon != null)
+            if (EquippedWeapon != null)
             {
-                equippedWeapon.Attack(direction, random);
-                if (equippedWeapon is IPotion)
+                EquippedWeapon.Attack(direction, random);
+                if (EquippedWeapon is IPotion)
                 {
-                    IPotion potion = equippedWeapon as IPotion;
+                    IPotion potion = EquippedWeapon as IPotion;
                     potion.Used = true;
                 }
             }

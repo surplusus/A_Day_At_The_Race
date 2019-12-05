@@ -66,6 +66,10 @@
             this.SwordSprite = new System.Windows.Forms.PictureBox();
             this.PlayerSprite = new System.Windows.Forms.PictureBox();
             this.Map_pictureBox = new System.Windows.Forms.PictureBox();
+            this.AttackRange_Up = new System.Windows.Forms.PictureBox();
+            this.AttackRange_Left = new System.Windows.Forms.PictureBox();
+            this.AttackRange_Down = new System.Windows.Forms.PictureBox();
+            this.AttackRange_Right = new System.Windows.Forms.PictureBox();
             this.HitPointPanel.SuspendLayout();
             this.Move_panel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,6 +89,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.SwordSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Map_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Up)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Left)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Down)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Right)).BeginInit();
             this.SuspendLayout();
             // 
             // AttackUp
@@ -96,7 +104,8 @@
             this.AttackUp.Location = new System.Drawing.Point(41, 50);
             this.AttackUp.Name = "AttackUp";
             this.AttackUp.Size = new System.Drawing.Size(83, 22);
-            this.AttackUp.TabIndex = 1;
+            this.AttackUp.TabIndex = 0;
+            this.AttackUp.TabStop = false;
             this.AttackUp.Text = "Up";
             this.AttackUp.UseVisualStyleBackColor = true;
             this.AttackUp.Click += new System.EventHandler(this.AttackUp_Click);
@@ -104,15 +113,17 @@
             // AttackLeft
             // 
             this.AttackLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttackLeft.BackColor = System.Drawing.Color.Beige;
             this.AttackLeft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AttackLeft.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.AttackLeft.ForeColor = System.Drawing.Color.Gray;
             this.AttackLeft.Location = new System.Drawing.Point(4, 87);
             this.AttackLeft.Name = "AttackLeft";
             this.AttackLeft.Size = new System.Drawing.Size(71, 22);
-            this.AttackLeft.TabIndex = 2;
+            this.AttackLeft.TabIndex = 0;
+            this.AttackLeft.TabStop = false;
             this.AttackLeft.Text = "Left";
-            this.AttackLeft.UseVisualStyleBackColor = true;
+            this.AttackLeft.UseVisualStyleBackColor = false;
             this.AttackLeft.Click += new System.EventHandler(this.AttackLeft_Click);
             // 
             // AttackDown
@@ -124,7 +135,8 @@
             this.AttackDown.Location = new System.Drawing.Point(41, 123);
             this.AttackDown.Name = "AttackDown";
             this.AttackDown.Size = new System.Drawing.Size(83, 22);
-            this.AttackDown.TabIndex = 4;
+            this.AttackDown.TabIndex = 0;
+            this.AttackDown.TabStop = false;
             this.AttackDown.Text = "Down";
             this.AttackDown.UseVisualStyleBackColor = true;
             this.AttackDown.Click += new System.EventHandler(this.AttackDown_Click);
@@ -138,7 +150,8 @@
             this.AttackRight.Location = new System.Drawing.Point(84, 87);
             this.AttackRight.Name = "AttackRight";
             this.AttackRight.Size = new System.Drawing.Size(71, 22);
-            this.AttackRight.TabIndex = 3;
+            this.AttackRight.TabIndex = 0;
+            this.AttackRight.TabStop = false;
             this.AttackRight.Text = "Right";
             this.AttackRight.UseVisualStyleBackColor = true;
             this.AttackRight.Click += new System.EventHandler(this.AttackRight_Click);
@@ -153,6 +166,7 @@
             this.MoveUp.Name = "MoveUp";
             this.MoveUp.Size = new System.Drawing.Size(83, 22);
             this.MoveUp.TabIndex = 0;
+            this.MoveUp.TabStop = false;
             this.MoveUp.Text = "Up";
             this.MoveUp.UseVisualStyleBackColor = true;
             this.MoveUp.Click += new System.EventHandler(this.MoveUp_Click);
@@ -279,7 +293,8 @@
             this.MoveLeft.Location = new System.Drawing.Point(4, 86);
             this.MoveLeft.Name = "MoveLeft";
             this.MoveLeft.Size = new System.Drawing.Size(71, 22);
-            this.MoveLeft.TabIndex = 1;
+            this.MoveLeft.TabIndex = 0;
+            this.MoveLeft.TabStop = false;
             this.MoveLeft.Text = "Left";
             this.MoveLeft.UseVisualStyleBackColor = true;
             this.MoveLeft.Click += new System.EventHandler(this.MoveLeft_Click);
@@ -293,7 +308,8 @@
             this.MoveDown.Location = new System.Drawing.Point(41, 122);
             this.MoveDown.Name = "MoveDown";
             this.MoveDown.Size = new System.Drawing.Size(83, 22);
-            this.MoveDown.TabIndex = 3;
+            this.MoveDown.TabIndex = 0;
+            this.MoveDown.TabStop = false;
             this.MoveDown.Text = "Down";
             this.MoveDown.UseVisualStyleBackColor = true;
             this.MoveDown.Click += new System.EventHandler(this.MoveDown_Click);
@@ -307,7 +323,8 @@
             this.MoveRight.Location = new System.Drawing.Point(84, 86);
             this.MoveRight.Name = "MoveRight";
             this.MoveRight.Size = new System.Drawing.Size(71, 22);
-            this.MoveRight.TabIndex = 2;
+            this.MoveRight.TabIndex = 0;
+            this.MoveRight.TabStop = false;
             this.MoveRight.Text = "Right";
             this.MoveRight.UseVisualStyleBackColor = true;
             this.MoveRight.Click += new System.EventHandler(this.MoveRight_Click);
@@ -374,7 +391,8 @@
             // 
             // SwordInvSprite
             // 
-            this.SwordInvSprite.BackColor = System.Drawing.Color.Transparent;
+            this.SwordInvSprite.BackColor = System.Drawing.Color.Bisque;
+            this.SwordInvSprite.ErrorImage = global::The_Quest.Properties.Resources.sword;
             this.SwordInvSprite.Location = new System.Drawing.Point(3, 3);
             this.SwordInvSprite.Name = "SwordInvSprite";
             this.SwordInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -386,7 +404,7 @@
             // 
             // RedPotionInvSprite
             // 
-            this.RedPotionInvSprite.BackColor = System.Drawing.Color.Transparent;
+            this.RedPotionInvSprite.BackColor = System.Drawing.Color.Bisque;
             this.RedPotionInvSprite.Location = new System.Drawing.Point(263, 3);
             this.RedPotionInvSprite.Name = "RedPotionInvSprite";
             this.RedPotionInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -398,7 +416,7 @@
             // 
             // BowInvSprite
             // 
-            this.BowInvSprite.BackColor = System.Drawing.Color.Transparent;
+            this.BowInvSprite.BackColor = System.Drawing.Color.Bisque;
             this.BowInvSprite.Location = new System.Drawing.Point(79, 3);
             this.BowInvSprite.Name = "BowInvSprite";
             this.BowInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -410,7 +428,7 @@
             // 
             // MaceInvSprite
             // 
-            this.MaceInvSprite.BackColor = System.Drawing.Color.Transparent;
+            this.MaceInvSprite.BackColor = System.Drawing.Color.Bisque;
             this.MaceInvSprite.Location = new System.Drawing.Point(153, 3);
             this.MaceInvSprite.Name = "MaceInvSprite";
             this.MaceInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -421,7 +439,7 @@
             // 
             // BluePotionInvSprite
             // 
-            this.BluePotionInvSprite.BackColor = System.Drawing.Color.Transparent;
+            this.BluePotionInvSprite.BackColor = System.Drawing.Color.Bisque;
             this.BluePotionInvSprite.Location = new System.Drawing.Point(333, 3);
             this.BluePotionInvSprite.Name = "BluePotionInvSprite";
             this.BluePotionInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -547,11 +565,55 @@
             this.Map_pictureBox.TabIndex = 34;
             this.Map_pictureBox.TabStop = false;
             // 
+            // AttackRange_Up
+            // 
+            this.AttackRange_Up.BackColor = System.Drawing.Color.Transparent;
+            this.AttackRange_Up.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AttackRange_Up.Location = new System.Drawing.Point(59, 446);
+            this.AttackRange_Up.Name = "AttackRange_Up";
+            this.AttackRange_Up.Size = new System.Drawing.Size(28, 28);
+            this.AttackRange_Up.TabIndex = 40;
+            this.AttackRange_Up.TabStop = false;
+            // 
+            // AttackRange_Left
+            // 
+            this.AttackRange_Left.BackColor = System.Drawing.Color.Transparent;
+            this.AttackRange_Left.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AttackRange_Left.Location = new System.Drawing.Point(161, 446);
+            this.AttackRange_Left.Name = "AttackRange_Left";
+            this.AttackRange_Left.Size = new System.Drawing.Size(28, 28);
+            this.AttackRange_Left.TabIndex = 41;
+            this.AttackRange_Left.TabStop = false;
+            // 
+            // AttackRange_Down
+            // 
+            this.AttackRange_Down.BackColor = System.Drawing.Color.Transparent;
+            this.AttackRange_Down.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AttackRange_Down.Location = new System.Drawing.Point(127, 447);
+            this.AttackRange_Down.Name = "AttackRange_Down";
+            this.AttackRange_Down.Size = new System.Drawing.Size(28, 28);
+            this.AttackRange_Down.TabIndex = 42;
+            this.AttackRange_Down.TabStop = false;
+            // 
+            // AttackRange_Right
+            // 
+            this.AttackRange_Right.BackColor = System.Drawing.Color.Transparent;
+            this.AttackRange_Right.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AttackRange_Right.Location = new System.Drawing.Point(93, 447);
+            this.AttackRange_Right.Name = "AttackRange_Right";
+            this.AttackRange_Right.Size = new System.Drawing.Size(28, 28);
+            this.AttackRange_Right.TabIndex = 43;
+            this.AttackRange_Right.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 508);
+            this.Controls.Add(this.AttackRange_Right);
+            this.Controls.Add(this.AttackRange_Down);
+            this.Controls.Add(this.AttackRange_Left);
+            this.Controls.Add(this.AttackRange_Up);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.HitPointPanel);
@@ -594,6 +656,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.SwordSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Map_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Up)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Left)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Down)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttackRange_Right)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -636,6 +702,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label AttackPanel_label;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox AttackRange_Up;
+        private System.Windows.Forms.PictureBox AttackRange_Left;
+        private System.Windows.Forms.PictureBox AttackRange_Down;
+        private System.Windows.Forms.PictureBox AttackRange_Right;
     }
 }
 

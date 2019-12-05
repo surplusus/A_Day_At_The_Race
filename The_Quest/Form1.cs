@@ -18,19 +18,28 @@ namespace The_Quest
     {
         private Game game;
         private Random random = new Random();
-        private int moveRange = 30;
         private Control[] buttonCtrl;
+        private PictureBox[] playerAttackRange;
+        private Control[] inventoryCtrl;
+        private Control[] weaponInRoomCtrl;
+        private Color defaultButtonColor = Color.Beige;
         public Form1()
         {
             InitializeComponent();
             KeyPreview = true;
             buttonCtrl = new Control[8] { MoveUp, MoveRight, MoveDown, MoveLeft, AttackUp, AttackRight, AttackDown, AttackLeft };
+            inventoryCtrl = new Control[5] { SwordInvSprite, BowInvSprite, MaceInvSprite, RedPotionInvSprite, BluePotionInvSprite };
+            weaponInRoomCtrl = new Control[5]{ RedPotionSprite, BluePotionSprite, SwordSprite, BowSprite, MaceSprite};
+            playerAttackRange = new PictureBox[4] { AttackRange_Up, AttackRange_Right, AttackRange_Down, AttackRange_Left };
+            for (int i = 0; i < 8; i++)
+                buttonCtrl[i].BackColor = defaultButtonColor;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             game = new Game(new Rectangle(12, 12, 655, 383));
             game.NewLevel(random);
             UpdateCharacters();
+            defaultButtonColor = buttonCtrl[0].BackColor;
         }
 
         private void UpdateCharacters()
@@ -65,7 +74,12 @@ namespace The_Quest
                     Application.Exit();
 
             if (enemyList.Count < 1)
+            {
+                MessageBox.Show("적을 죽였습니다. 다음 레벨로 갑시다!");
                 game.NewLevel(random);
+                UpdateCharacters();
+            }
+
         }
 
         private void UpdateInventory(string weaponName)
@@ -125,6 +139,12 @@ namespace The_Quest
                     weaponCtrl = MaceSprite;
                     break;
             }
+            for (int i = 0; i < 5; ++i)
+            {
+                int flag = (1 << i);
+                if ((weaponFlag & flag) == 1)
+                    weaponInRoomCtrl[i].Visible = true;
+            }
         }
 
         private void UpdateEnemy(ref int enemyFlag, ref List<bool> list, Enemy enemy)
@@ -164,6 +184,48 @@ namespace The_Quest
                 }
             }
         }
+        private void UpdateAttackRange(Direction dir, bool attack)
+        {
+            int[] dx = { 0, 30, 0, -30 };
+            int[] dy = { -30, 0, 30, 0 };
+            if (!attack)
+            {
+                for (int i = 0; i < 4; ++i)
+                {
+                    playerAttackRange[i].BackColor = Color.Transparent;
+                    playerAttackRange[i].Location = 
+                        new Point(game.PlayerLocation.X + dx[i], game.PlayerLocation.Y + dy[i]);
+                }
+            }
+            else
+            {
+                if (game.PlayerEquippedWeapon == null)
+                {
+                    MessageBox.Show("아직 무기가 없습니다!");
+                    return;
+                }
+                switch (game.PlayerEquippedWeapon.Name)
+                {
+                    case "Sword":
+                        playerAttackRange[((int)dir - 1) % 4].BackColor = Color.Red;
+                        playerAttackRange[((int)dir) % 4].BackColor = Color.Red;
+                        playerAttackRange[((int)dir + 1) % 4].BackColor = Color.Red;
+                        break;
+                    case "Bow":
+                        playerAttackRange[(int)dir].Location =
+                            new Point(game.PlayerLocation.X + 50, game.PlayerLocation.Y + 50);
+                        playerAttackRange[((int)dir) % 4].BackColor = Color.Red;
+                        break;
+                    case "Mace":
+                        foreach (PictureBox range in playerAttackRange)
+                            range.BackColor = Color.Red;
+                        break;
+                    default:
+                        MessageBox.Show("아직 무기가 없습니다!");
+                        break;
+                }
+            }
+        }
         private int FindIndexOfPushButton(KeyEventArgs e)
         {
             int idxButton = 0;
@@ -187,16 +249,24 @@ namespace The_Quest
 
             return idxButton;
         }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             int idxButton = FindIndexOfPushButton(e);
 
             if (idxButton < 4)
+            {
                 game.Move((Direction)idxButton, random);
+                UpdateAttackRange((Direction)idxButton, false);
+            }
             else
+            {
                 game.Attack((Direction)(idxButton - 4), random);
+                UpdateAttackRange((Direction)idxButton, true);
+            }
 
-            buttonCtrl[idxButton].ForeColor = Color.Black;
+            buttonCtrl[idxButton].ForeColor = Color.White;
+            buttonCtrl[idxButton].BackColor = Color.Crimson;
 
             UpdateCharacters();
         }
@@ -205,53 +275,67 @@ namespace The_Quest
             int idxButton = FindIndexOfPushButton(e);
 
             buttonCtrl[idxButton].ForeColor = Color.Gray;
+            buttonCtrl[idxButton].BackColor = defaultButtonColor;
+
+            foreach (PictureBox range in playerAttackRange)
+            {
+                range.BackColor = Color.Transparent;
+            }
         }
         private void MoveUp_Click(object sender, EventArgs e)
         {
             game.Move(Direction.UP, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.UP, false);
         }
 
         private void MoveLeft_Click(object sender, EventArgs e)
         {
             game.Move(Direction.LEFT, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.LEFT, false);
         }
 
         private void MoveRight_Click(object sender, EventArgs e)
         {
             game.Move(Direction.RIGHT, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.RIGHT, false);
         }
 
         private void MoveDown_Click(object sender, EventArgs e)
         {
             game.Move(Direction.DOWN, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.DOWN, false);
         }
 
         private void AttackUp_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.UP, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.UP, true);
         }
 
         private void AttackLeft_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.LEFT, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.LEFT, true);
         }
 
         private void AttackRight_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.RIGHT, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.RIGHT, true);
         }
 
         private void AttackDown_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.DOWN, random);
             UpdateCharacters();
+            UpdateAttackRange(Direction.DOWN, true);
         }
 
         private void SwordInvSprite_Click(object sender, EventArgs e)

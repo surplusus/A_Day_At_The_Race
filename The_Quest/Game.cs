@@ -27,12 +27,12 @@ namespace The_Quest
         public Point PlayerLocation { get { return player.Location; } }
         public List<Enemy> Enemies { get; private set; } = new List<Enemy>();
         public List<Weapon> WeaponsInRoom { get; private set; } = new List<Weapon>();
-        public IEnumerable<string> PlayerWeapos { get { return player.Weapons; } }
+        public IEnumerable<string> PlayerWeapons { get { return player.Weapons; } }
         public Weapon PlayerEquippedWeapon { get { return player.EquippedWeapon; } }
         public int Level { get; private set; } = 0;
         public Rectangle Boundaries { get; private set; }
         public int PlayerHitPoints { get { return player.HitPoints; } }
-
+        public Rectangle[] PlayerAttackRange { get { return player.RectOfAttackRange; } }
         public Game(Rectangle boundaries)
         {
             this.Boundaries = boundaries;
@@ -47,6 +47,7 @@ namespace The_Quest
             {
                 enemy.Move(random);
             }
+            // Attack Rectangle
         }
         public void Equip(string weaponName)
         {

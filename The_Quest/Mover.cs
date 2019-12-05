@@ -5,7 +5,7 @@ namespace The_Quest
 {
     public abstract class Mover
     {
-        protected readonly int MoveInterval = 10;
+        protected readonly int MoveInterval = 25;
         public Point Location { get; set; }
         protected Game game;
         public Mover(Game game, Point location)

@@ -12,6 +12,7 @@ namespace The_Quest
         public Weapon EquippedWeapon { get; private set; }
         private List<Weapon> inventory = new List<Weapon>();
         public int HitPoints { get; private set; }
+        public Rectangle[] RectOfAttackRange;
         public IEnumerable<string> Weapons
         {
             get
@@ -28,6 +29,7 @@ namespace The_Quest
             : base(game, location)
         {
             HitPoints = 10;
+            SetRectAttacRange();
         }
         public void Hit(int maxDamage, Random random)
         {
@@ -43,6 +45,24 @@ namespace The_Quest
                 if (weapon.Name == weaponName)
                     EquippedWeapon = weapon;
         }
+        private void SetRectAttacRange()
+        {
+            if (EquippedWeapon == null)
+            {
+                Size size = new Size(30, 30);
+                Point[] points = { new Point(Location.X + 0, Location.Y -15)
+                                 , new Point(Location.X + 15,Location.Y + 0)
+                                 , new Point(Location.X + 0, Location.Y +15)
+                                 , new Point(Location.X - 15, Location.Y +0) 
+                };
+                RectOfAttackRange = new Rectangle[4] {
+                    new Rectangle(points[0], size),
+                    new Rectangle(points[1], size),
+                    new Rectangle(points[2], size),
+                    new Rectangle(points[3], size)    
+                };
+            }
+        }
         public void Move(Direction direction)
         {
             base.Location = Move(direction, game.Boundaries);
@@ -57,6 +77,11 @@ namespace The_Quest
                     }
                 }
             }
+            // Attack Rectangle
+            for (int i = 0; i < 4; ++i)
+            {
+                RectOfAttackRange[i].Location = base.Location;
+            }
         }
         public void Attack(Direction direction, Random random)
         {
@@ -68,6 +93,11 @@ namespace The_Quest
                     IPotion potion = EquippedWeapon as IPotion;
                     potion.Used = true;
                 }
+            }
+            // Attack Rectangle
+            for (int i = 0; i < 4; ++i)
+            {
+                RectOfAttackRange[i].Location = base.Location;
             }
         }
 

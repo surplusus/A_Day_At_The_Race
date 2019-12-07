@@ -99,7 +99,7 @@
             // 
             this.AttackUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AttackUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AttackUp.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.AttackUp.ForeColor = System.Drawing.Color.Gray;
             this.AttackUp.Location = new System.Drawing.Point(41, 50);
             this.AttackUp.Name = "AttackUp";
@@ -115,7 +115,7 @@
             this.AttackLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AttackLeft.BackColor = System.Drawing.Color.Beige;
             this.AttackLeft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AttackLeft.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.AttackLeft.ForeColor = System.Drawing.Color.Gray;
             this.AttackLeft.Location = new System.Drawing.Point(4, 87);
             this.AttackLeft.Name = "AttackLeft";
@@ -130,7 +130,7 @@
             // 
             this.AttackDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AttackDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AttackDown.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.AttackDown.ForeColor = System.Drawing.Color.Gray;
             this.AttackDown.Location = new System.Drawing.Point(41, 123);
             this.AttackDown.Name = "AttackDown";
@@ -145,7 +145,7 @@
             // 
             this.AttackRight.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AttackRight.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AttackRight.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AttackRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.AttackRight.ForeColor = System.Drawing.Color.Gray;
             this.AttackRight.Location = new System.Drawing.Point(84, 87);
             this.AttackRight.Name = "AttackRight";
@@ -160,7 +160,7 @@
             // 
             this.MoveUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MoveUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MoveUp.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MoveUp.ForeColor = System.Drawing.Color.Gray;
             this.MoveUp.Location = new System.Drawing.Point(41, 49);
             this.MoveUp.Name = "MoveUp";
@@ -288,7 +288,7 @@
             // 
             this.MoveLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MoveLeft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MoveLeft.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MoveLeft.ForeColor = System.Drawing.Color.Gray;
             this.MoveLeft.Location = new System.Drawing.Point(4, 86);
             this.MoveLeft.Name = "MoveLeft";
@@ -303,7 +303,7 @@
             // 
             this.MoveDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MoveDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MoveDown.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MoveDown.ForeColor = System.Drawing.Color.Gray;
             this.MoveDown.Location = new System.Drawing.Point(41, 122);
             this.MoveDown.Name = "MoveDown";
@@ -318,7 +318,7 @@
             // 
             this.MoveRight.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MoveRight.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MoveRight.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.MoveRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MoveRight.ForeColor = System.Drawing.Color.Gray;
             this.MoveRight.Location = new System.Drawing.Point(84, 86);
             this.MoveRight.Name = "MoveRight";
@@ -392,6 +392,7 @@
             // SwordInvSprite
             // 
             this.SwordInvSprite.BackColor = System.Drawing.Color.Bisque;
+            this.SwordInvSprite.BackgroundImage = global::The_Quest.Properties.Resources.sword;
             this.SwordInvSprite.ErrorImage = global::The_Quest.Properties.Resources.sword;
             this.SwordInvSprite.Location = new System.Drawing.Point(3, 3);
             this.SwordInvSprite.Name = "SwordInvSprite";
@@ -405,6 +406,7 @@
             // RedPotionInvSprite
             // 
             this.RedPotionInvSprite.BackColor = System.Drawing.Color.Bisque;
+            this.RedPotionInvSprite.BackgroundImage = global::The_Quest.Properties.Resources.potion_red;
             this.RedPotionInvSprite.Location = new System.Drawing.Point(263, 3);
             this.RedPotionInvSprite.Name = "RedPotionInvSprite";
             this.RedPotionInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -417,6 +419,7 @@
             // BowInvSprite
             // 
             this.BowInvSprite.BackColor = System.Drawing.Color.Bisque;
+            this.BowInvSprite.BackgroundImage = global::The_Quest.Properties.Resources.bow;
             this.BowInvSprite.Location = new System.Drawing.Point(79, 3);
             this.BowInvSprite.Name = "BowInvSprite";
             this.BowInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -429,6 +432,7 @@
             // MaceInvSprite
             // 
             this.MaceInvSprite.BackColor = System.Drawing.Color.Bisque;
+            this.MaceInvSprite.BackgroundImage = global::The_Quest.Properties.Resources.mace;
             this.MaceInvSprite.Location = new System.Drawing.Point(153, 3);
             this.MaceInvSprite.Name = "MaceInvSprite";
             this.MaceInvSprite.Size = new System.Drawing.Size(58, 46);
@@ -440,6 +444,7 @@
             // BluePotionInvSprite
             // 
             this.BluePotionInvSprite.BackColor = System.Drawing.Color.Bisque;
+            this.BluePotionInvSprite.BackgroundImage = global::The_Quest.Properties.Resources.potion_blue;
             this.BluePotionInvSprite.Location = new System.Drawing.Point(333, 3);
             this.BluePotionInvSprite.Name = "BluePotionInvSprite";
             this.BluePotionInvSprite.Size = new System.Drawing.Size(58, 46);

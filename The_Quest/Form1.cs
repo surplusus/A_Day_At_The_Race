@@ -50,30 +50,26 @@ namespace The_Quest
             List<bool> enemyList = new List<bool>(Enumerable.Repeat<bool>(false,3));
             int enemyFlag = 0;
 
-            foreach (Enemy enemy in game.Enemies)
+            for (int i = 0; i < game.Enemies.Count; ++i)
             {
-                UpdateEnemy(ref enemyFlag, ref enemyList, enemy);
+                UpdateEnemy(ref enemyFlag, ref enemyList, game.Enemies[i]);
             }
             //Math.Pow(2, 3);
 
             List<bool> weaponList = new List<bool>(Enumerable.Repeat<bool>(false,5));
             int weaponFlag = 0;
 
-            foreach (Weapon weapon in game.WeaponsInRoom)
+            for (int i = 0; i < game.WeaponsInRoom.Count; ++i)
             {
+                Weapon weapon = game.WeaponsInRoom[i];
                 UpdateWeaponCtrl(ref weaponFlag, ref weaponList, weapon);
-            }
-
-            foreach (String weaponName in game.nameOfInvenItem)
-            {
-                UpdateInventory(weaponName);
             }
 
             if (game.PlayerHitPoints <= 0)
                 if (MessageBox.Show("죽었습니다.") == DialogResult.OK)
                     Application.Exit();
 
-            if (enemyList.Count < 1)
+            if (game.Enemies.Count < 1)
             {
                 MessageBox.Show("적을 죽였습니다. 다음 레벨로 갑시다!");
                 game.NewLevel(random);
@@ -90,9 +86,11 @@ namespace The_Quest
             {
                 case "Red Potion":
                     control = RedPotionInvSprite;
+                    
                     break;
                 case "Blue Potion":
                     control = BluePotionInvSprite;
+                    game.Equip("Blue Potion");
                     break;
                 case "Sword":
                     control = SwordInvSprite;
@@ -106,7 +104,13 @@ namespace The_Quest
             }
 
             if (game.CheckPlayerInventory(weaponName))
+            {
                 control.Visible = true;
+                if (weaponName == "Red Potion")
+                    game.Equip("Red Potion");
+                else if (weaponName == "Blue Potion")
+                    game.Equip("Blue Potion");
+            }
             if (game.PlayerEquippedWeapon != null)
                 if (game.PlayerEquippedWeapon.Name == weaponName)
                     control.BackColor = Color.Blue;
@@ -139,14 +143,24 @@ namespace The_Quest
                     weaponCtrl = MaceSprite;
                     break;
             }
-            for (int i = 0; i < 5; ++i)
+
+            if (game.WeaponsInRoom.Contains(weapon))
             {
-                int flag = (1 << i);
-                if ((weaponFlag & flag) == 1)
-                    weaponInRoomCtrl[i].Visible = true;
+                int idx = (int)Math.Log(weaponFlag, 2);
+                if (weaponInRoomCtrl[idx].Visible == false)
+                    weaponInRoomCtrl[idx].Visible = true;
+
+                Rectangle playerRect = new Rectangle(PlayerSprite.Location, PlayerSprite.Size);
+                Rectangle weaponRect = new Rectangle(weaponInRoomCtrl[idx].Location, weaponInRoomCtrl[idx].Size);
+                Rectangle intersec = Rectangle.Intersect(playerRect, weaponRect);
+                if (intersec.IsEmpty == false)
+                {
+                    game.AcquireWeapon(weapon);
+                    weaponInRoomCtrl[idx].Visible = false;
+                    UpdateInventory(weapon.Name);
+                }
             }
         }
-
         private void UpdateEnemy(ref int enemyFlag, ref List<bool> list, Enemy enemy)
         {
             if (enemy is Bat)
@@ -156,9 +170,11 @@ namespace The_Quest
                 Bat bat = enemy as Bat;
                 list[0] = !enemy.Dead;
                 BatHitPoints.Text = enemy.HitPoints.ToString();
-                if (enemy.HitPoints > 0)
+                BatSprite.Visible = !enemy.Dead;
+                BatSprite.Location = bat.Location;
+                if (enemy.HitPoints <= 0)
                 {
-                    BatSprite.Visible = !enemy.Dead;
+                    game.Enemies.Remove(enemy);
                 }
             }
             else if (enemy is Ghost)
@@ -166,10 +182,12 @@ namespace The_Quest
                 enemyFlag += (int)TypeEnemy.GHOST;
                 Ghost ghost = enemy as Ghost;
                 list[1] = !enemy.Dead;
-                BatHitPoints.Text = enemy.HitPoints.ToString();
-                if (enemy.HitPoints > 0)
+                GhostHitPoints.Text = enemy.HitPoints.ToString();
+                GhostSprite.Visible = !enemy.Dead;
+                GhostSprite.Location = ghost.Location;
+                if (enemy.HitPoints <= 0)
                 {
-                    GhostSprite.Visible = !enemy.Dead;
+                    game.Enemies.Remove(enemy);
                 }
             }
             else if (enemy is Ghoul)
@@ -177,10 +195,12 @@ namespace The_Quest
                 enemyFlag += (int)TypeEnemy.GHOUL;
                 Ghoul ghoul = enemy as Ghoul;
                 list[2] = !enemy.Dead;
-                BatHitPoints.Text = enemy.HitPoints.ToString();
-                if (enemy.HitPoints > 0)
+                GhoulHitPoints.Text = enemy.HitPoints.ToString();
+                GhoulSprite.Visible = !enemy.Dead;
+                GhoulSprite.Location = ghoul.Location;
+                if (enemy.HitPoints <= 0)
                 {
-                    BatSprite.Visible = !enemy.Dead;
+                    game.Enemies.Remove(enemy);
                 }
             }
         }
@@ -204,6 +224,7 @@ namespace The_Quest
                     MessageBox.Show("아직 무기가 없습니다!");
                     return;
                 }
+
                 switch (game.PlayerEquippedWeapon.Name)
                 {
                     case "Sword":
@@ -221,7 +242,7 @@ namespace The_Quest
                             range.BackColor = Color.Red;
                         break;
                     default:
-                        MessageBox.Show("아직 무기가 없습니다!");
+                        MessageBox.Show("아직 무기가 선택되지 않았습니다!");
                         break;
                 }
             }
@@ -262,7 +283,6 @@ namespace The_Quest
             else
             {
                 game.Attack((Direction)(idxButton - 4), random);
-                UpdateAttackRange((Direction)idxButton, true);
             }
 
             buttonCtrl[idxButton].ForeColor = Color.White;
@@ -277,6 +297,50 @@ namespace The_Quest
             buttonCtrl[idxButton].ForeColor = Color.Gray;
             buttonCtrl[idxButton].BackColor = defaultButtonColor;
 
+            if (idxButton >= 4)
+                UpdateAttackRange((Direction)idxButton, true);
+
+            if (e.KeyCode == Keys.D1)
+            {
+                if (game.PlayerWeapons.ToList().Contains("Sword") == true)
+                {
+                    game.Equip("Sword");
+                    UpdateInventory("Sword");
+                }
+            }
+            else if (e.KeyCode == Keys.D2)
+            {
+                if (game.PlayerWeapons.ToList().Contains("Bow") == true)
+                {
+                    game.Equip("Bow");
+                    UpdateInventory("Bow");
+                }
+            }
+            else if (e.KeyCode == Keys.D3)
+            { 
+                if (game.PlayerWeapons.ToList().Contains("Mace") == true)
+                {
+                    game.Equip("Mace");
+                    UpdateInventory("Mace");
+                }
+            }
+            else if (e.KeyCode == Keys.D4)
+            {
+                if (game.PlayerWeapons.ToList().Contains("Red Potion") == true)
+                {
+                    game.Equip("Red Potion");
+                    UpdateInventory("Red Potion");
+                }
+            }
+            else if (e.KeyCode == Keys.D5)
+            {
+                if (game.PlayerWeapons.ToList().Contains("Blue Potion") == true)
+                {
+                    game.Equip("Blue Potion");
+                    UpdateInventory("Blue Potion");
+                }
+            }
+        
             foreach (PictureBox range in playerAttackRange)
             {
                 range.BackColor = Color.Transparent;
@@ -341,26 +405,31 @@ namespace The_Quest
         private void SwordInvSprite_Click(object sender, EventArgs e)
         {
             game.Equip("Sword");
+            UpdateInventory("Sword");
         }
 
         private void RedPotionInvSprite_Click(object sender, EventArgs e)
         {
             game.Equip("Red Potion");
+            UpdateInventory("Red Potion");
         }
 
         private void BowInvSprite_Click(object sender, EventArgs e)
         {
             game.Equip("Bow");
+            UpdateInventory("Bow");
         }
 
         private void BluePotionInvSprite_Click(object sender, EventArgs e)
         {
             game.Equip("Blue Potion");
+            UpdateInventory("Blue Potion");
         }
 
         private void MaceInvSprite_Click(object sender, EventArgs e)
         {
             game.Equip("Mace");
+            UpdateInventory("Mace");
         }
 
 

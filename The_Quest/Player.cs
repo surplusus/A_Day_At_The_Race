@@ -83,6 +83,10 @@ namespace The_Quest
                 RectOfAttackRange[i].Location = base.Location;
             }
         }
+        public void AcquireWeapon(Weapon weapon)
+        {
+            inventory.Add(weapon);
+        }
         public void Attack(Direction direction, Random random)
         {
             if (EquippedWeapon != null)

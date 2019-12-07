@@ -20,7 +20,7 @@ namespace The_Quest
         protected bool DamageEnemy(Direction direction, int radius, int damage, Random random)
         {
             Point target = game.PlayerLocation;
-            for (int dist = 0; dist < radius; dist++)
+            for (int dist = 25; dist < 25 + radius; dist++)
             {
                 foreach (Enemy enemy in game.Enemies)
                 {

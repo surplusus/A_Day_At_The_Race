@@ -17,7 +17,7 @@ namespace The_Quest
 
             foreach (Direction dir in attackDirections)
             {
-                if (DamageEnemy(dir, 20, 1, random))
+                if (DamageEnemy(dir, 30, 1, random))
                 {
                     return;
                 }

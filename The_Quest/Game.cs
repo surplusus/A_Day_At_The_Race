@@ -40,6 +40,12 @@ namespace The_Quest
             player = new Player(this
                 , new Point(boundaries.Left + 10, boundaries.Top + 70));
         }
+        public void AcquireWeapon(Weapon weapon)
+        {
+            player.AcquireWeapon(weapon);
+            //WeaponsInRoom.Find((e) => (weapon.Name == e.Name)).PickUpWeapon();
+            WeaponsInRoom.Remove(weapon);
+        }
         public void Move(Direction direction, Random random)
         {
             player.Move(direction);
@@ -72,6 +78,8 @@ namespace The_Quest
             {
                 if (!enemy.Dead)
                 {
+                    if (player.EquippedWeapon != null)
+                        player.EquippedWeapon.Attack(direction, random);
                     enemy.Move(random);
                 }
             }

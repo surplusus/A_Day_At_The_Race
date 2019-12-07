@@ -42,5 +42,6 @@ namespace The_Quest
 
             return directionToMove;
         }
+
     }
 }

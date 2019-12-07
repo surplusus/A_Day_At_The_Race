@@ -21,7 +21,7 @@ namespace The_Quest
             
             foreach (Direction dir in attackDirections)
             {
-                DamageEnemy(dir, 6, 6, random);
+                DamageEnemy(dir, 20, 6, random);
             }
         }
     }
